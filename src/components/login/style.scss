@@ -1,71 +1,702 @@
+@import '@/statics/style/variables.scss';
+
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.forgetPasswordLink {
+  cursor: pointer;
+}
+
+
 
 @media (min-width: 1281px) {
-  
-    .mainLogin{
-        .signInStyle{
-            
+
+  .login-container {
+    display: grid;
+    direction: rtl;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.5fr;
+    overflow-y: scroll;
+
+
+    .login-form {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-template-rows: 4fr 1fr;
+
+      .cart {
+        grid-row-start: 1;
+        box-shadow: 1em;
+        border-style: solid;
+        border-radius: 0.25em;
+        border-width: 1px;
+        box-shadow: 0em 0em 1em $light_gray;
+        border-color: $light_gray;
+
+        .imgcontainer {
+          text-align: center;
+
+          .logo {
+            margin-top: 24px;
+            width: 5em;
+          }
         }
-        
-    }
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
     
-    .mainLogin{
+        .showpasswordicon {
+          display: inline-block;
+          width: 5%;
+          height: 5%;
+        }
+
+        .title-containerr {
+          .titler {
+            font-size: 1em;
+            text-align: center;
+            font-weight: normal;
+            transform: translateY(50%);
+            color: $dark_gray;
+          }
+
+          .set-language {
+            color: #fff;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+          }
+        }
+
+        .ldap-check {
+          margin-right: 0 !important;
+
+          .el-checkbox__label {
+            margin-right: 10px !important;
+          }
+
+          .el-checkbox__input.is-checked .el-checkbox__inner,
+          .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #68BD0A;
+            border-color: #68BD0A;
+          }
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #68BD0A;
+          }
+        }
+
+        .el-form-item {
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+
+          .el-form-item__label {
+            float: right;
+            font-size: 0.8em;
+          }
+        }
+
+        .el-button--primary {
+          background-color: #68BD0A !important;
+          border-color: #68BD0A !important;
+        }
+
+        .login-btn {
+          margin-top: 2em;
+          font-size: 0.8em;
+        }
+
+        .el-input {
+          font-size: 0.8em;
+          direction: ltr;
+          text-align: left;
+        }
+
+        .container {
+          padding: 16px;
+          margin-bottom: 1em;
+          direction: rtl;
+
+          span.psw {
+            color: $lightBlue;
+            float: right;
+            font-size: 0.7em;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .shooka-info {
+        grid-row-start: 2;
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .shooka-logo {
+          width: 50%;
+          border-radius: 0%;
+        }
+
+        .copy-write {
+          .copy-write-txt {
+            font-size: 0.70em;
+            direction: rtl;
+            font-weight: lighter;
+            color: $dark_gray;
+          }
+        }
+      }
 
     }
-    
   }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    //CSS
-    
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .login-container {
+    display: grid;
+    direction: rtl;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+
+
+    .login-form {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      align-items: center;
+      justify-content: center;
+
+      .cart {
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;
+        box-shadow: 1em;
+        border-style: solid;
+        border-radius: 0.25em;
+        border-width: 1px;
+        box-shadow: 0em 0em 0.3em $light_gray;
+        border-color: $light_gray;
+
+        .imgcontainer {
+          text-align: center;
+
+          .logo {
+            margin-top: 24px;
+            width: 3.5em;
+          }
+        }
+
+        .title-containerr {
+          .titler {
+            font-size: 1em;
+            text-align: center;
+            font-weight: normal;
+            transform: translateY(50%);
+            color: $dark_gray;
+          }
+        }
+
+        .ldap-check {
+          margin-right: 0 !important;
+
+          .el-checkbox__label {
+            margin-right: 10px !important;
+          }
+
+          .el-checkbox__input.is-checked .el-checkbox__inner,
+          .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #68BD0A;
+            border-color: #68BD0A;
+          }
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #68BD0A;
+          }
+        }
+
+        .el-form-item {
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+
+          .el-form-item__label {
+            float: right;
+            font-size: 0.8em;
+          }
+        }
+
+        .el-input {
+          font-size: 0.8em;
+          direction: ltr;
+          text-align: left;
+        }
+
+        .el-button--primary {
+          background-color: #68BD0A !important;
+          border-color: #68BD0A !important;
+        }
+
+        .login-btn {
+          margin-top: 1.8em;
+          font-size: 0.8em;
+        }
+
+        .container {
+          padding: 1em;
+          margin-bottom: 1em;
+          direction: rtl;
+
+          span.psw {
+            color: $lightBlue;
+            float: right;
+            font-size: 0.6em;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .shooka-info {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .shooka-logo {
+          width: 50%;
+          border-radius: 0%;
+        }
+
+        .copy-write {
+          .copy-write-txt {
+            font-size: 0.70em;
+            direction: rtl;
+            font-weight: lighter;
+            color: $dark_gray;
+          }
+        }
+      }
+    }
   }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    //CSS
-    
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login-container {
+    display: grid;
+    direction: rtl;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.3fr 1fr 0.3fr;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+
+    .login-form {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      align-items: center;
+      justify-content: center;
+
+      .cart {
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;
+        box-shadow: 1em;
+        border-style: solid;
+        border-radius: 0.25em;
+        border-width: 1px;
+        box-shadow: 0em 0em 1em $light_gray;
+        border-color: $light_gray;
+
+        .imgcontainer {
+          text-align: center;
+
+          .logo {
+            margin-top: 24px;
+            width: 3.2em;
+          }
+        }
+
+        .title-containerr {
+          .titler {
+            font-size: 1em;
+            text-align: center;
+            font-weight: normal;
+            transform: translateY(50%);
+            color: $dark_gray;
+          }
+
+          .set-language {
+            color: #fff;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+          }
+        }
+
+        .ldap-check {
+          margin-right: 0 !important;
+
+          .el-checkbox__label {
+            margin-right: 10px !important;
+            font-size: 0.8em;
+          }
+
+          .el-checkbox__input.is-checked .el-checkbox__inner,
+          .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #68BD0A;
+            border-color: #68BD0A;
+          }
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #68BD0A;
+          }
+        }
+
+        .el-form-item {
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+
+          .el-form-item__label {
+            float: right;
+            font-size: 0.7em;
+          }
+        }
+
+        .el-button--primary {
+          background-color: #68BD0A !important;
+          border-color: #68BD0A !important;
+        }
+
+        .login-btn {
+          margin-top: 2em;
+          font-size: 0.7em;
+        }
+
+        .el-input {
+          font-size: 0.8em;
+          direction: ltr;
+          text-align: left;
+        }
+
+        .container {
+          padding: 16px;
+          margin-bottom: 1em;
+          direction: rtl;
+
+          span.psw {
+            color: $lightBlue;
+            float: right;
+            font-size: 0.8em;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .shooka-info {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 1em;
+
+        .shooka-logo {
+          width: 60%;
+          border-radius: 0%;
+        }
+
+        .copy-write {
+          .copy-write-txt {
+            font-size: 0.8em;
+            direction: rtl;
+            font-weight: lighter;
+            color: $dark_gray;
+          }
+        }
+      }
+
+    }
   }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-    //CSS
-    
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .login-container {
+    display: grid;
+    direction: rtl;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+
+    .login-form {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      align-items: center;
+      justify-content: center;
+
+      .cart {
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;
+        box-shadow: 2em;
+        border-style: solid;
+        border-radius: 0.25em;
+        border-width: 1px;
+        box-shadow: 0em 0em 1em $light_gray;
+        border-color: $light_gray;
+
+        .imgcontainer {
+          text-align: center;
+
+          .logo {
+            margin-top: 24px;
+            width: 3em;
+
+          }
+        }
+
+        .title-containerr {
+          .titler {
+            font-size: 1em;
+            text-align: center;
+            font-weight: normal;
+            transform: translateY(50%);
+            color: $dark_gray;
+          }
+
+          .set-language {
+            color: #fff;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+          }
+        }
+
+        .ldap-check {
+          margin-right: 0 !important;
+
+          .el-checkbox__label {
+            margin-right: 10px !important;
+            font-size: 0.8em;
+          }
+
+          .el-checkbox__input.is-checked .el-checkbox__inner,
+          .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #68BD0A;
+            border-color: #68BD0A;
+          }
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #68BD0A;
+          }
+        }
+
+        .el-form-item {
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+
+          .el-form-item__label {
+            float: right;
+            font-size: 0.7em;
+          }
+        }
+
+        .el-button--primary {
+          background-color: #68BD0A !important;
+          border-color: #68BD0A !important;
+        }
+
+        .login-btn {
+          margin-top: 2em;
+          font-size: 0.7em;
+        }
+
+        .el-input {
+          font-size: 0.8em;
+          direction: ltr;
+          text-align: left;
+        }
+
+        .container {
+          padding: 16px;
+          margin-bottom: 1em;
+          direction: rtl;
+
+          span.psw {
+            color: $lightBlue;
+            float: right;
+            font-size: 0.8em;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .shooka-info {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 1em;
+
+        .shooka-logo {
+          width: 60%;
+          border-radius: 0%;
+        }
+
+        .copy-write {
+          .copy-write-txt {
+            font-size: 0.8em;
+            direction: rtl;
+            font-weight: lighter;
+            color: $dark_gray;
+          }
+        }
+      }
+
+    }
   }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    //CSS
-    
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .login-container {
+    direction: rtl;
+    overflow-y: scroll;
+
+    .login-form {
+
+      .cart {
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;
+
+        .imgcontainer {
+          text-align: center;
+
+          .logo {
+            margin-top: 24px;
+            width: 2em;
+          }
+        }
+
+        .title-containerr {
+          .titler {
+            font-size: 0.9em;
+            text-align: center;
+            font-weight: normal;
+            transform: translateY(50%);
+            color: $dark_gray;
+          }
+
+          .set-language {
+            color: #fff;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+          }
+        }
+
+        .ldap-check {
+          margin-right: 0 !important;
+
+          .el-checkbox__label {
+            margin-right: 10px !important;
+            font-size: 0.8em;
+          }
+
+          .el-checkbox__input.is-checked .el-checkbox__inner,
+          .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #68BD0A;
+            border-color: #68BD0A;
+          }
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #68BD0A;
+          }
+        }
+
+        .el-form-item {
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+
+          .el-form-item__label {
+            float: right;
+            font-size: 16px;
+          }
+        }
+
+        .el-button--primary {
+          background-color: #68BD0A !important;
+          border-color: #68BD0A !important;
+        }
+
+        .login-btn {
+          margin-top: 1em;
+          font-size: 0.7em;
+        }
+
+        .el-input {
+          font-size: 16px;
+          direction: ltr;
+          text-align: left;
+        }
+
+        .container {
+          padding: 16px;
+          direction: rtl;
+
+          span.psw {
+            color: $lightBlue;
+            float: right;
+            font-size: 12px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .shooka-info {
+        display: gone;
+        grid-template-columns: 50% 50%;
+
+        .shooka-logo {
+          display: none;
+          width: 60%;
+          border-radius: 0%;
+        }
+
+        .copy-write {
+          .copy-write-txt {
+            display: none;
+            font-size: 0.7em;
+            direction: rtl;
+            font-weight: lighter;
+            color: $dark_gray;
+          }
+        }
+      }
+
+    }
   }
+}
