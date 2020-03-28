@@ -1,12 +1,5 @@
 export default {
-  LANCHING_URL: 'http://localhost:8085',
-  MAX_PARTICIPANTCOUNT: 8,
-  MAX_PARTICIPANTCOUNT_MOBILE_AND_TABLET: 8,
-  HOST: '0.0.0.0',
-  HTTPS: false,
-  OPEN: true,
-  PORT: 8085,
-  MAX_RETRY_JOIN: 2
+
 }
 
 // const fs = require('fs')
