@@ -1,6 +1,4 @@
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
 module.exports = {
   chainWebpack: (config) => {
     const svgRule = config.module.rule('svg')
@@ -20,8 +18,6 @@ module.exports = {
     disableHostCheck: true
   },
   configureWebpack: {
-    plugins: [new BundleAnalyzerPlugin({
-      analyzerPort: 4200
-    })]
+
   }
 }

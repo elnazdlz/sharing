@@ -1,15 +1,37 @@
 <template>
-  <div class="login-container">
+  <div class="resgiter-container">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <ElForm ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="cart">
         <div class="container">
-          <ElFormItem prop="username" :label="'نام کاربری'">
+          <ElFormItem prop="Email" :label="'ایمیل'">
             <ElInput
-              v-model="loginForm.username"
+              v-model="loginForm.Email"
+              prefix-icon="el-icon-office-building"
+              :placeholder="'لطفاایمیل خود را وارد کنید'"
+              name="Email"
+              auto-complete="on"
+              type="text"
+              @keyup.native.enter="handleLogin()"
+            />
+          </ElFormItem>
+          <ElFormItem prop="NumID" :label="'کد ملی'">
+            <ElInput
+              v-model="loginForm.NumID"
               prefix-icon="el-icon-user"
-              :placeholder="'لطفا نام کاربری خود را وارد کنید'"
-              name="username"
+              :placeholder="'لطفا کد ملی خود را وارد کنید'"
+              name="NumID"
+              type="text"
+              @keyup.native.enter="handleLogin()"
+            />
+          </ElFormItem>
+          <ElFormItem prop="TelNum" :label="'شماره تلفن'">
+            <ElInput
+              v-model="loginForm.TelNum"
+              prefix-icon="el-icon-office-building"
+              :placeholder="'لطفا شماره تلفن را وارد کنید'"
+              name="TelNum"
+              auto-complete="on"
               type="text"
               @keyup.native.enter="handleLogin()"
             />
@@ -31,24 +53,8 @@
             type="primary"
             style="width:100%;margin-bottom:30px;"
           >
-            ورود
+            ثبت
           </ElButton>
-
-          <ElButton
-            class="login-btn"
-            :loading="loading"
-            type="primary"
-            style="width:100%;margin-bottom:30px;"
-            @click="handleregister()"
-          >
-            ثبت نام
-          </ElButton>
-        </div>
-
-        <div class="container">
-          <span class="psw">
-            رمز عبور خود را فراموش کرده اید؟
-          </span>
         </div>
       </div>
     </ElForm>
@@ -56,28 +62,17 @@
 </template>
 <script>
 export default {
-  name: 'Login',
+  name: 'Register',
   data() {
     return {
-      loading: false,
-      passwordType: 'password',
       loginForm: {
-        tenantName: '',
-        username: '',
-        password: ''
+        Email: '',
+        NumID: '',
+        password: '',
+        TelNum: ''
       }
     }
-  },
-  methods: {
-    handleregister() {
-      this.$router.push({
-        name: 'Register',
-        path: '/Register'
-      })
-    }
-
   }
-
 }
 </script>
 
