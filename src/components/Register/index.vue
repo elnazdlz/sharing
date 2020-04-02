@@ -22,6 +22,7 @@
               :placeholder="'لطفا کد ملی خود را وارد کنید'"
               name="NumID"
               type="text"
+              maxlength="10"
               @keyup.native.enter="handleLogin()"
             />
           </ElFormItem>
@@ -55,6 +56,16 @@
           >
             ثبت
           </ElButton>
+
+          <ElButton
+            class="login-btn"
+            :loading="loading"
+            type="primary"
+            style="width:100%;margin-bottom:30px;"
+            @click="returnLogin()"
+          >
+            ورود
+          </ElButton>
         </div>
       </div>
     </ElForm>
@@ -72,7 +83,17 @@ export default {
         TelNum: ''
       }
     }
+  },
+  methods: {
+    returnLogin() {
+      this.$router.push({
+        name: 'Login',
+        path: '/'
+      })
+    }
+
   }
+
 }
 </script>
 

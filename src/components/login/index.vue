@@ -72,7 +72,7 @@ export default {
     handleregister() {
       this.$router.push({
         name: 'Register',
-        path: '/Register'
+        path: '/register'
       })
     }
 
